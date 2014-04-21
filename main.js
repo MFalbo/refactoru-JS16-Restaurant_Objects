@@ -2,6 +2,8 @@
   
 // });
 
+
+// ---------------------------------PART1---------------------------
 var FoodItem = function(name, calories, vegan, glutenFree, citrusFree){
 	this.name = name;
 	this.calories = calories;
@@ -34,3 +36,65 @@ var soup = new FoodItem('Soup', 225, true, true, false);
 console.log(pizza.toString());
 console.log(sandwich.toString());
 console.log(soup.toString());
+
+
+// -----------------------------------PART2---------------------------------
+var Drink = function(name, description, price) {
+	this.name = name;
+	this.price = price;
+	this.description = description;
+	this.ingredients = [];
+	this.toString = toString;
+};
+
+var Plate = function(name, description, price) {
+	this.name = name;
+	this.price = price;
+	this.description = description;
+	this.ingredients = [];
+	this.toString = toString;
+};
+
+var Order = function() {
+	this.plates = [];
+	this.toString = toString;
+};
+
+var Menu = function() {
+	this.plates = [];
+	this.toString = toString;
+};
+
+var Restaurant = function(name, description, menu) {
+	this.name = name;
+	this.description = description;
+	this.menu = menu;
+	this.toString = toString;
+};
+
+var Customer = function(dietaryPreference) {
+	this.dietaryPreference = dietaryPreference;
+	this.toString = toString;
+};
+
+
+function toString() {
+	var message = '';
+	for (key in this){
+		if(typeof(this[key]) === 'string' || typeof(this[key]) === 'number' ){
+			message += key + ': ' + this[key] + '\n';
+		}
+	}
+	return message;
+}
+
+
+
+var beer = new Drink('beer', 'alcohol', 3);
+
+
+
+
+
+
+
