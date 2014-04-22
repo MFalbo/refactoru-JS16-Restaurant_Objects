@@ -117,7 +117,7 @@ Customer.prototype.toString = toString;
 function toString() {
 	var message = '';
 	for (key in this){
-		if(typeof(this[key]) === 'string' || typeof(this[key]) === 'number' ){
+		if(typeof(this[key]) !== 'function' ){
 			message += key + ': ' + this[key] + '\n';
 		}
 	}
